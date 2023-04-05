@@ -8,7 +8,7 @@ import Image from 'next/image'
 // components
 import GalleryComponent from '@kvitkaphoto/components/gallery/Gallery'
 // constants
-import { LOGO } from '@kvitkaphoto/constants'
+import { API, LOGO, SITE_URL } from '@kvitkaphoto/constants'
 // config
 import supabase from '@kvitkaphoto/supabase.config'
 // types
@@ -66,44 +66,44 @@ const Gallery: FC<TGallery> = ({ title, images }) => {
 
 export default Gallery
 
-export async function getStaticPaths() {
-  const { data } = await supabase.from('galleries').select()
+// export async function getStaticPaths() {
+//   const { data } = await supabase.from('galleries').select()
+//
+//   const paths = data?.map(({ id }: TGallery) => {
+//     return {
+//       params: {
+//         id
+//       }
+//     }
+//   })
+//
+//   return {
+//     fallback: false,
+//     paths
+//   }
+// }
 
-  const paths = data?.map(({ id }: TGallery) => {
-    return {
-      params: {
-        id
-      }
-    }
-  })
+// export async function getStaticProps(context: any) {
+//   const id = context.params.id
+//   const { data } = await supabase.from('galleries').select().eq('id', id)
+//
+//   return {
+//     props: {
+//       ...data?.[0]
+//     },
+//     revalidate: 60
+//   }
+// }
 
-  return {
-    fallback: false,
-    paths
-  }
-}
-
-export async function getStaticProps(context: any) {
+// this is a version for local api
+export async function getServerSideProps(context: any) {
   const id = context.params.id
-  const { data } = await supabase.from('galleries').select().eq('id', id)
+  const res = await fetch(`${SITE_URL}${API.GALLERIES}/${id}`)
+  const data = await res.json()
 
   return {
     props: {
       ...data?.[0]
-    },
-    revalidate: 60
+    }
   }
 }
-
-// this is a version for local api
-// export async function getServerSideProps(context: any) {
-//   const id = context.params.id
-//   const res = await fetch(`${SITE_URL}${API.GALLERIES}/${id}`)
-//   const data = await res.json()
-//
-//   return {
-//     props: {
-//       ...data[0]
-//     }
-//   }
-// }
