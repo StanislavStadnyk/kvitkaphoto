@@ -1,0 +1,33 @@
+.social-networks {
+  @extend %listreset;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  background: $black;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 20px 10px;
+  transform: translateY(-50%);
+
+  li {
+    padding-top: 10px;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    a {
+      display: block;
+      font-size: 25px;
+      text-align: center;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  img {
+    width: 22px;
+  }
+}

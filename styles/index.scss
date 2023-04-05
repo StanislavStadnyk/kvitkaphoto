@@ -1,0 +1,112 @@
+@import 'global';
+@import 'bootstrap';
+@import 'helpers';
+@import 'media';
+
+// components
+@import 'components/header';
+@import 'components/gallery';
+@import 'components/social';
+@import 'components/pricing';
+@import 'components/popovers';
+@import 'components/about';
+@import 'components/contacts';
+@import 'components/polaroid';
+@import 'components/buttons';
+
+html,
+body {
+  min-width: 320px;
+  height: 100%;
+}
+
+body {
+  background-image: url('/images/bg-main.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  @include media('<tablet') {
+    background-attachment: inherit;
+  }
+}
+
+button,
+a {
+  @extend %transition;
+  outline: none;
+
+  &:focus,
+  &:active,
+  &:hover {
+    outline: none !important;
+    text-decoration: none;
+    color: $link-hover;
+    box-shadow: none;
+  }
+}
+
+a[href^='tel'] {
+  color: $link-color;
+
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+.main {
+  padding-top: 70px;
+  padding-bottom: 50px;
+
+  @include media('<tablet') {
+    padding-top: 30px;
+    padding-bottom: 15px;
+  }
+}
+
+.dark-seo {
+  overflow: hidden;
+  height: 0;
+  text-indent: -9999px;
+}
+
+#go-to-top {
+  @include transition();
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  margin-left: 500px;
+  background: $white;
+  border-radius: 4px;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #999;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.52);
+  opacity: 0;
+
+  @include media('<1140px') {
+    left: auto;
+    margin-left: 0;
+    right: 10px;
+  }
+
+  @include media('<tablet') {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  &:hover {
+    opacity: 0.7 !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 982px;
+  }
+}

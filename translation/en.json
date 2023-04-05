@@ -1,0 +1,69 @@
+{
+  "nav_pricing": "Pricing",
+  "nav_gallery": "Gallery",
+  "nav_about": "About me",
+  "nav_contacts": "Contacts",
+
+  "pricing_wedding_title": "Wedding",
+  "pricing_wedding_subtitle": "Full package",
+  "pricing_wedding_price": "Price 1600$",
+  "pricing_wedding_description": "До 7 часов. Съемочный день начинается из дома невесты (жениха) и заканчивается после первого танца жениха и невесты, если позже – то каждый полный или неполный час будет стоить +500 грн. Вы получаете от 500 снимков в лёгкой обработке и 40 фото в полной обработке - ретушь, художественная обработка (в электронном виде, на DVD диске), а также 10 напечатанных фотографий 20x30см (А4). Все снимки проходят обработку. Стоимость 4000 грн. Оригиналы снимков не отдаются. Вы получаете фотографии только после того как они пройдут полную обработку!",
+
+  "pricing_wedding_ecomomy_title": "Wedding",
+  "pricing_wedding_ecomomy_subtitle": "Economy package",
+  "pricing_wedding_economy_price": "Price 1000$",
+  "pricing_wedding_economy_description": "До 4 часов. В съемочный день входит фотосессия свадебной прогулки и съемка в ЗАГСе, если позже – то каждый полный или неполный час будет стоить +500 грн.. Вы получаете 25 фотографий в полной обработке - ретушь, художественная обработка и от 200 снимков с лёгкой обработкой (в электронном виде, на DVD диске). Все снимки проходят обработку. Стоимость 2500 грн. Оригиналы снимков не отдаются. Вы получаете фотографии только после того как они пройдут полную обработку! Возможны также другие варианты :) Пишите, звоните - все обсуждается!",
+
+  "pricing_street_title": "Street",
+  "pricing_street_subtitle": " ",
+  "pricing_street_price": "Price 400$",
+  "pricing_street_description": "Часовая уличная фотосессия всего 700 грн.!!! Каждый дополнительный полный или не полный час +400грн.!!! Вы получаете в районе 200 снимков в лёгкой обработке и 20 фото в полной обработке. Количество людей не ограничено.",
+
+  "pricing_studio_title": "Studio",
+  "pricing_studio_subtitle": " ",
+  "pricing_studio_price": "Price 700$",
+  "pricing_studio_description": "Часовая фотосессия в студии всего 1000 грн.!!! Каждый дополнительный полный или не полный час +700грн.!!! Не упустите возможность весело провести время в студии и запечатлеть эти яркие моменты!!! Вы получаете в районе 200 снимков в лёгкой обработке и 20 фото в полной обработке. Количество людей не ограничено.",
+
+  "pricing_event_title": "Events, Birthdays, Corporates",
+  "pricing_event_subtitle": " ",
+  "pricing_event_price": "Price 150$ per/hour",
+  "pricing_event_description": "Фотосессия в ночном клубе, дне рождении, корпоративе и любом вашем празднике от 4-х часов и выше стоит 350 грн./час, если меньше 4-х часов - 400грн./час. Минимальный заказ от 2-х часов. Возможны также другие варианты :) Пишите, звоните - все обсуждается!",
+
+  "pricing_gift_title": "Gift certificate",
+  "pricing_gift_subtitle": " ",
+  "pricing_gift_price": "Custom price",
+  "pricing_gift_description": "Не знаете что подарить близким? Лучший подарок - 'память'. Воспоминания, которые запечатлены на фото, не сможет заменить ничто. Заказывайте подарочный сертификат!",
+
+  "about_title": "About me",
+  "about_alt": "Every moment is unique...",
+  "about_content": [
+    {
+      "text": "Maryna Stadnyk. I was born on January 26, 1990. Starting my activity as a photographer, I could not even think that I would soon give it all my time..."
+    },
+    {
+      "text": "I can't sleep well, my fantasy won't let me... be it next shoot, next picture, or next rearrangement in apartment... In general, I always have something on my mind!"
+    },
+    {
+      "text": "My ideas sometimes seem too crazy to really turn them into reality, but I'm sure it will be interesting try and then just can't stop..."
+    },
+    {
+      "text": "I love making art out of work!"
+    },
+    {
+      "text": "I bring people joy and a smile! I put a part of myself into every picture. I will save the most exciting and touching moments of life, moments joy, happiness, moments of delight, laughter, smiles... All this truly priceless! I can look into the soul through my lens..., feel with you..."
+    },
+    {
+      "text": "There are many photographers… and each client always has a choice! Thank you, that you chose me! :)"
+    }
+  ],
+
+  "contacts_title": "Contacts",
+
+  "btn_more": "More",
+
+  "helmet_title_home": "Home",
+  "helmet_title_about": "About",
+  "helmet_title_contacts": "Contacts",
+  "helmet_title_login": "Login",
+  "helmet_title_pricing": "Pricing"
+}

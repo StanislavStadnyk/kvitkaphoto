@@ -1,0 +1,38 @@
+// custom variables and override bootstrap variables
+$white: #fff;
+$black: #000;
+$black-2: #191919;
+$gray: #ddd;
+$gray-2: #999;
+$link-hover: #999;
+$pink: #f379ab;
+
+//Scaffolding
+$body-bg: #0a0a0a;
+$body-color: #dedede;
+$link-color: #52d0e8;
+$link-decoration: none;
+
+//Typography
+$font-family-base: "Open Sans Condensed", sans-serif;
+$font-family-narrow: "PT Sans Narrow", sans-serif;
+$font-size-base: 14px;
+
+// //Container sizes
+$grid-gutter-width: 30px;
+
+//Navbar
+$navbar-toggler-font-size: $font-size-base;
+
+//Buttons
+$btn-border-radius: 0;
+$btn-border-radius-lg: 0;
+$btn-link-color: $white;
+
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "primary": $link-color,
+    "danger": $pink,
+  )
+);

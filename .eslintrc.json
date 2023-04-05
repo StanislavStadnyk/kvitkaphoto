@@ -1,3 +1,16 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // enable additional rules
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+
+    // override default options for rules from base configurations
+    "no-cond-assign": ["error", "always"],
+
+    // disable rules from base configurations
+    "no-console": "off",
+
+    "@next/next/google-font-display": "off"
+  }
 }
