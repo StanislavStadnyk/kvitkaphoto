@@ -66,44 +66,44 @@ const Gallery: FC<TGallery> = ({ title, images }) => {
 
 export default Gallery
 
-// export async function getStaticPaths() {
-//   const { data } = await supabase.from('galleries').select()
-//
-//   const paths = data?.map(({ id }: TGallery) => {
-//     return {
-//       params: {
-//         id
-//       }
-//     }
-//   })
-//
-//   return {
-//     fallback: false,
-//     paths
-//   }
-// }
+export async function getStaticPaths() {
+  const { data } = await supabase.from('galleries').select()
 
-// export async function getStaticProps(context: any) {
-//   const id = context.params.id
-//   const { data } = await supabase.from('galleries').select().eq('id', id)
-//
-//   return {
-//     props: {
-//       ...data?.[0]
-//     },
-//     revalidate: 60
-//   }
-// }
+  const paths = data?.map(({ id }: TGallery) => {
+    return {
+      params: {
+        id
+      }
+    }
+  })
 
-// this is a version for local api
-export async function getServerSideProps(context: any) {
+  return {
+    fallback: false,
+    paths
+  }
+}
+
+export async function getStaticProps(context: any) {
   const id = context.params.id
-  const res = await fetch(`${SITE_URL}${API.GALLERIES}/${id}`)
-  const data = await res.json()
+  const { data } = await supabase.from('galleries').select().eq('id', id)
 
   return {
     props: {
       ...data?.[0]
-    }
+    },
+    revalidate: 1
   }
 }
+
+// this is a version for local api
+// export async function getServerSideProps(context: any) {
+//   const id = context.params.id
+//   const res = await fetch(`${SITE_URL}${API.GALLERIES}/${id}`)
+//   const data = await res.json()
+//
+//   return {
+//     props: {
+//       ...data?.[0]
+//     }
+//   }
+// }
