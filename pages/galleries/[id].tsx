@@ -67,7 +67,10 @@ const Gallery: FC<TGallery> = ({ title, images }) => {
 export default Gallery
 
 export async function getStaticPaths() {
-  const { data } = await supabase.from('galleries').select()
+  // const { data } = await supabase.from('galleries').select()
+
+  const res = await fetch(`${SITE_URL}${API.GALLERIES}`)
+  const data = await res.json()
 
   const paths = data?.map(({ id }: TGallery) => {
     return {
@@ -85,7 +88,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const id = context.params.id
-  const { data } = await supabase.from('galleries').select().eq('id', id)
+  // const { data } = await supabase.from('galleries').select().eq('id', id)
+
+  const res = await fetch(`${SITE_URL}${API.GALLERIES}/${id}`)
+  const data = await res.json()
 
   return {
     props: {
