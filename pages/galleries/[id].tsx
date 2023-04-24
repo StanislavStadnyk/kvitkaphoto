@@ -9,8 +9,6 @@ import Image from 'next/image'
 import GalleryComponent from '@kvitkaphoto/components/gallery/Gallery'
 // constants
 import { API, LOGO, SITE_URL } from '@kvitkaphoto/constants'
-// config
-import supabase from '@kvitkaphoto/supabase.config'
 // types
 import { TGallery } from '@kvitkaphoto/types'
 
@@ -67,8 +65,6 @@ const Gallery: FC<TGallery> = ({ title, images }) => {
 export default Gallery
 
 export async function getStaticPaths() {
-  // const { data } = await supabase.from('galleries').select()
-
   const res = await fetch(`${SITE_URL}${API.GALLERIES}`)
   const data = await res.json()
 
@@ -81,15 +77,13 @@ export async function getStaticPaths() {
   })
 
   return {
-    fallback: 'blocking',
+    fallback: false,
     paths
   }
 }
 
 export async function getStaticProps(context: any) {
   const id = context.params.id
-  // const { data } = await supabase.from('galleries').select().eq('id', id)
-
   const res = await fetch(`${SITE_URL}${API.GALLERIES}/${id}`)
   const data = await res.json()
 
@@ -100,16 +94,3 @@ export async function getStaticProps(context: any) {
     revalidate: 1
   }
 }
-
-// this is a version for local api
-// export async function getServerSideProps(context: any) {
-//   const id = context.params.id
-//   const res = await fetch(`${SITE_URL}${API.GALLERIES}/${id}`)
-//   const data = await res.json()
-//
-//   return {
-//     props: {
-//       ...data?.[0]
-//     }
-//   }
-// }

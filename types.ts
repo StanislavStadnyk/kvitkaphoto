@@ -12,10 +12,12 @@ export type TGalleryImage = {
 
 export type TImage = {
   name: string
-  size: {
-    width: number
-    height: number
-  }
+  size: TImageSize
+}
+
+export type TImageSize = {
+  width: number
+  height: number
 }
 
 export type TDropDownItem = {

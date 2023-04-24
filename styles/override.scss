@@ -14,8 +14,8 @@ $link-color: #52d0e8;
 $link-decoration: none;
 
 //Typography
-$font-family-base: "Open Sans Condensed", sans-serif;
-$font-family-narrow: "PT Sans Narrow", sans-serif;
+$font-family-base: 'Open Sans Condensed', sans-serif;
+$font-family-narrow: 'PT Sans Narrow', Impact, Charcoal, Sans-Serif;
 $font-size-base: 14px;
 
 // //Container sizes
@@ -32,7 +32,7 @@ $btn-link-color: $white;
 $theme-colors: map-merge(
   $theme-colors,
   (
-    "primary": $link-color,
-    "danger": $pink,
+    'primary': $link-color,
+    'danger': $pink
   )
 );

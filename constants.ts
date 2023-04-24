@@ -21,8 +21,7 @@ export const META_KEYWORDS =
 
 export const API = {
   LOGIN: '/api/login',
-  GALLERIES: '/api/galleries',
-  AUTH: '/api/auth'
+  GALLERIES: '/api/galleries'
 }
 
 export const LG_KEY = '97CD1814-A3CD45CC-BC206BF9-323740E0'

@@ -5,8 +5,24 @@
   min-width: 400px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   padding: 0;
+  background: none;
+  border: 0;
 
-  @include media("<desktop") {
+  &.custom {
+    .popover-header {
+      background: $pink;
+    }
+
+    .popover-arrow {
+      &:before,
+      &:after {
+        border-bottom-color: $pink;
+        border-top-color: $pink;
+      }
+    }
+  }
+
+  @include media('<desktop') {
     min-width: 300px;
   }
 
@@ -16,13 +32,19 @@
 
   .popover-header {
     font-size: 24px;
-    background: $gray;
+    background: $link-color;
     font-family: $font-family-base;
     text-align: center;
     min-height: 46px;
+
+    &:before {
+      border-color: $link-color;
+    }
   }
 
-  .popover-content {
+  .popover-body {
+    background: rgb(39 39 39 / 79%);
+    color: $white;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -34,7 +56,8 @@
   .popover-arrow {
     &:before,
     &:after {
-      border-bottom-color: #ddd;
+      border-bottom-color: $link-color;
+      border-top-color: $link-color;
     }
   }
 }

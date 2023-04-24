@@ -190,17 +190,19 @@ export const updateGallery = async ({
     ).then(async data => {
       console.log('Items processed', data)
 
+      const dataSorted = data.sort((a, b) => a.volume - b.volume)
+
       const updatedImages = [
         ...selectedGallery.images,
         {
           id: nanoid(),
           imgSmall: {
-            name: data[0].name,
-            size: data[0].size
+            name: dataSorted[0].name,
+            size: dataSorted[0].size
           },
           imgLarge: {
-            name: data[1].name,
-            size: data[1].size
+            name: dataSorted[1].name,
+            size: dataSorted[1].size
           }
         }
       ]
@@ -244,9 +246,14 @@ export const updateGallery = async ({
         .from('galleries')
         .update({
           id: id,
-          title: title
+          title: title,
+          images: selectedGallery.images
         })
         .eq('id', selectedGallery.id)
+
+      toast('Gallery has been updated!', {
+        type: 'success'
+      })
 
       console.log('response result no images', response)
 

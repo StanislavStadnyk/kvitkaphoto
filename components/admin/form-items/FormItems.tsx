@@ -53,11 +53,7 @@ const FormItems: FC<TFormItems> = ({
           <option value="default">Select gallery</option>
 
           {data.map((option: any) => (
-            <option
-              key={option.id}
-              value={option.id}
-              selected={option.id === selectedGallery.id}
-            >
+            <option key={option.id} value={option.id}>
               {option.id}
             </option>
           ))}

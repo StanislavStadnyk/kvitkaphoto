@@ -1,17 +1,25 @@
 import React, { FC, useState } from 'react'
-import { Col, Form, Row } from 'react-bootstrap'
+import { Col, Container, Form, Row } from 'react-bootstrap'
 
+import Head from 'next/head'
+
+// components
 import FormItems from '@kvitkaphoto/components/admin/form-items/FormItems'
 import { addGallery, updateGallery } from '@kvitkaphoto/components/admin/helper'
 import List from '@kvitkaphoto/components/admin/list/List'
 import Uploader from '@kvitkaphoto/components/admin/uploader/Uploader'
+// constants
 import {
   API,
   KVITKAPHOTO_ACCESS_TOKEN,
+  LOGO,
   ROUTES,
   SITE_URL
 } from '@kvitkaphoto/constants'
+// config
 import supabase from '@kvitkaphoto/supabase.config'
+import Trans from '@kvitkaphoto/translation/en.json'
+// types
 import { TGallery } from '@kvitkaphoto/types'
 
 type TAdmin = {
@@ -43,7 +51,6 @@ const Admin: FC<TAdmin> = ({ data }) => {
 
   const handleSelectGallery = async (e: any) => {
     const selectedValue = e.currentTarget.value
-    console.log('handleSelectGallery', selectedValue)
     setSelectedGallery(selectedValue)
 
     const gallery = dataMain.find(
@@ -67,6 +74,22 @@ const Admin: FC<TAdmin> = ({ data }) => {
 
   const handleRemove = (imgs: any) => {
     setImages(imgs)
+  }
+
+  const handleListRemove = (id: string) => {
+    const newArra = selectedGallery.images.filter(img => img.id !== id)
+
+    console.log('id', id)
+    console.log('images', selectedGallery.images)
+    console.log('newArra', newArra)
+    console.log('selectedGallery', selectedGallery)
+    // setImages(imgs)
+    setSelectedGallery({ ...selectedGallery, images: newArra })
+    //
+    // const { error } = await supabase
+    //   .from('galler')
+    //   .update({ name: 'Australia' })
+    //   .eq('id', 1)
   }
 
   const updateDataOnSuccess = (data: any, selected: any) => {
@@ -98,36 +121,47 @@ const Admin: FC<TAdmin> = ({ data }) => {
   }
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Row>
-        <Col>
-          <Uploader
-            size={150}
-            images={images}
-            onUpload={handleUpload}
-            onRemove={handleRemove}
-          />
+    <>
+      <Head>
+        <title>{`${Trans.helmet_title_admin} | ${LOGO}`}</title>
+      </Head>
 
-          <FormItems
-            data={dataMain}
-            formData={{
-              id: galleryId,
-              title
-            }}
-            selectedGallery={selectedGallery}
-            onSelect={handleSelectGallery}
-            onIdChange={handleIdChange}
-            onTitleChange={handleTitleChange}
-          />
-        </Col>
+      <Container fluid={true} className="pt-3">
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Row>
+            <Col md={4}>
+              <Uploader
+                size={150}
+                images={images}
+                onUpload={handleUpload}
+                onRemove={handleRemove}
+              />
 
-        <Col>
-          {selectedGallery?.images?.length ? (
-            <List images={selectedGallery.images} />
-          ) : null}
-        </Col>
-      </Row>
-    </Form>
+              <FormItems
+                data={dataMain}
+                formData={{
+                  id: galleryId,
+                  title
+                }}
+                selectedGallery={selectedGallery}
+                onSelect={handleSelectGallery}
+                onIdChange={handleIdChange}
+                onTitleChange={handleTitleChange}
+              />
+            </Col>
+
+            <Col md={8}>
+              {selectedGallery?.images?.length ? (
+                <List
+                  images={selectedGallery.images}
+                  onRemove={handleListRemove}
+                />
+              ) : null}
+            </Col>
+          </Row>
+        </Form>
+      </Container>
+    </>
   )
 }
 
@@ -135,9 +169,11 @@ export default Admin
 
 export async function getServerSideProps({ req }: any) {
   const accessToken = req.cookies[KVITKAPHOTO_ACCESS_TOKEN]
-  const { data: user } = await supabase.auth.getUser(accessToken)
+  const {
+    data: { user }
+  } = await supabase.auth.getUser(accessToken)
 
-  if (user.user) {
+  if (user) {
     const res = await fetch(`${SITE_URL}${API.GALLERIES}`)
     const data = await res.json()
 
@@ -145,7 +181,9 @@ export async function getServerSideProps({ req }: any) {
   }
 
   return {
-    props: {},
+    props: {
+      data: []
+    },
     redirect: { destination: ROUTES.LOGIN, permanent: false }
   }
 }

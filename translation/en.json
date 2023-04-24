@@ -7,32 +7,32 @@
   "pricing_wedding_title": "Wedding",
   "pricing_wedding_subtitle": "Full package",
   "pricing_wedding_price": "Price 1600$",
-  "pricing_wedding_description": "До 7 часов. Съемочный день начинается из дома невесты (жениха) и заканчивается после первого танца жениха и невесты, если позже – то каждый полный или неполный час будет стоить +500 грн. Вы получаете от 500 снимков в лёгкой обработке и 40 фото в полной обработке - ретушь, художественная обработка (в электронном виде, на DVD диске), а также 10 напечатанных фотографий 20x30см (А4). Все снимки проходят обработку. Стоимость 4000 грн. Оригиналы снимков не отдаются. Вы получаете фотографии только после того как они пройдут полную обработку!",
+  "pricing_wedding_description": "Up to 7 hours. The shooting day starts from the house of the bride (groom) and ends after the first dance of the bride and groom, if later, then each full or incomplete hour will cost +500 AU$. You get from 500 photos in light processing and 40 photos in full processing - retouching, artistic processing (in electronic form, on DVD), as well as 10 printed photos 20x30cm (A4). All images are processed. The cost is 4000 AU$. Original photographs will not be released. You receive photos only after they have been fully processed!",
 
   "pricing_wedding_ecomomy_title": "Wedding",
   "pricing_wedding_ecomomy_subtitle": "Economy package",
   "pricing_wedding_economy_price": "Price 1000$",
-  "pricing_wedding_economy_description": "До 4 часов. В съемочный день входит фотосессия свадебной прогулки и съемка в ЗАГСе, если позже – то каждый полный или неполный час будет стоить +500 грн.. Вы получаете 25 фотографий в полной обработке - ретушь, художественная обработка и от 200 снимков с лёгкой обработкой (в электронном виде, на DVD диске). Все снимки проходят обработку. Стоимость 2500 грн. Оригиналы снимков не отдаются. Вы получаете фотографии только после того как они пройдут полную обработку! Возможны также другие варианты :) Пишите, звоните - все обсуждается!",
+  "pricing_wedding_economy_description": "Up to 4 hours. The shooting day includes a photo session of a wedding walk and shooting at the registry office, if later, then each full or incomplete hour will cost +500 AU$. form on DVD). All images are processed. The cost is 2500 AU$. Original photographs will not be released. You receive photos only after they have been fully processed! Other options are also possible :) Write, call - everything is discussed!",
 
   "pricing_street_title": "Street",
   "pricing_street_subtitle": " ",
   "pricing_street_price": "Price 400$",
-  "pricing_street_description": "Часовая уличная фотосессия всего 700 грн.!!! Каждый дополнительный полный или не полный час +400грн.!!! Вы получаете в районе 200 снимков в лёгкой обработке и 20 фото в полной обработке. Количество людей не ограничено.",
+  "pricing_street_description": "Hour street photo session only 700 AU$!!! Each additional full or incomplete hour +400 AU$!!! You get around 200 lightly edited shots and 20 fully edited photos. The number of people is not limited.",
 
   "pricing_studio_title": "Studio",
   "pricing_studio_subtitle": " ",
   "pricing_studio_price": "Price 700$",
-  "pricing_studio_description": "Часовая фотосессия в студии всего 1000 грн.!!! Каждый дополнительный полный или не полный час +700грн.!!! Не упустите возможность весело провести время в студии и запечатлеть эти яркие моменты!!! Вы получаете в районе 200 снимков в лёгкой обработке и 20 фото в полной обработке. Количество людей не ограничено.",
+  "pricing_studio_description": "One-hour photo shoot in the studio for only 1000 AU$!!! Each additional full or incomplete hour +700 AU$!!! Do not miss the opportunity to have fun in the studio and capture these bright moments!!! You get around 200 lightly edited shots and 20 fully edited photos. The number of people is not limited.",
 
   "pricing_event_title": "Events, Birthdays, Corporates",
   "pricing_event_subtitle": " ",
   "pricing_event_price": "Price 150$ per/hour",
-  "pricing_event_description": "Фотосессия в ночном клубе, дне рождении, корпоративе и любом вашем празднике от 4-х часов и выше стоит 350 грн./час, если меньше 4-х часов - 400грн./час. Минимальный заказ от 2-х часов. Возможны также другие варианты :) Пишите, звоните - все обсуждается!",
+  "pricing_event_description": "A photo session in a nightclub, birthday, corporate party and any of your holidays from 4 hours and more costs 350 AU$/hour, if less than 4 hours - 400 AU$/hour. Minimum order from 2 hours. Other options are also possible :) Write, call - everything is discussed!",
 
   "pricing_gift_title": "Gift certificate",
   "pricing_gift_subtitle": " ",
   "pricing_gift_price": "Custom price",
-  "pricing_gift_description": "Не знаете что подарить близким? Лучший подарок - 'память'. Воспоминания, которые запечатлены на фото, не сможет заменить ничто. Заказывайте подарочный сертификат!",
+  "pricing_gift_description": "Don't know what to give your loved ones? The best gift is 'memory'. The memories that are captured in the photo can not be replaced by anything. Order a gift certificate!",
 
   "about_title": "About me",
   "about_alt": "Every moment is unique...",
@@ -65,5 +65,6 @@
   "helmet_title_about": "About",
   "helmet_title_contacts": "Contacts",
   "helmet_title_login": "Login",
-  "helmet_title_pricing": "Pricing"
+  "helmet_title_pricing": "Pricing",
+  "helmet_title_admin": "Admin"
 }

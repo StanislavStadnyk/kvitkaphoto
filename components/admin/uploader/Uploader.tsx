@@ -1,18 +1,41 @@
-import React, { useState } from 'react'
-import { toast } from 'react-toastify'
+import React, { FC, useState } from 'react'
+import Button from 'react-bootstrap/Button'
 
+import Image from 'next/image'
+
+// types
+import { TImageSize } from '@kvitkaphoto/types'
+
+// helper
 import { uploadImages } from '../helper'
+// styles
+import styles from './Uploader.module.css'
 
-export default function Uploader({
-  url,
-  size,
-  onUpload,
-  images,
-  onRemove
-}: any) {
-  const [avatarUrl, setAvatarUrl] = useState<any>(null)
+type TUploader = {
+  size: number
+  images: string[]
+  onUpload: (imgs: any) => void
+  onRemove: (imgs: any) => void
+}
+
+type TImageBlob = {
+  blob: string
+  file: {
+    lastModified: number
+    lastModifiedDate: string
+    name: string
+    size: number
+    type: string
+    webkitRelativePath: string
+  }
+  size: TImageSize
+}
+
+const Uploader: FC<TUploader> = ({ size, images, onUpload, onRemove }: any) => {
   const [uploading, setUploading] = useState(false)
-  const [isDisabledUpload, setDisableUpload] = useState(false)
+
+  const isDisabled = images.length >= 2 || uploading
+  const labelText = uploading ? 'Uploading ...' : 'Upload'
 
   const handleUploadImages = (event: any) => {
     uploadImages({
@@ -31,47 +54,44 @@ export default function Uploader({
   }
 
   return (
-    <div>
+    <div className="mb-3">
       {images.length > 0 ? (
         <ul className="list-unstyled d-flex">
-          {images.map((image: any, index: number) => {
-            console.log('image', image)
-
-            return (
-              <li
-                key={image.blob + index}
-                className="pb-3 m-2 d-flex flex-column"
+          {images.map((image: TImageBlob, index: number) => (
+            <li
+              key={image.blob + index}
+              className="pb-3 m-2 d-flex flex-column"
+            >
+              <Button
+                size="sm"
+                className="mb-2"
+                variant="dark"
+                onClick={() => removeImage(image.blob)}
               >
-                <button
-                  className="sm"
-                  type="button"
-                  onClick={() => removeImage(image.blob)}
-                >
-                  Remove
-                </button>
-                <img
-                  src={image.blob}
-                  alt="Avatar"
-                  className="avatar image"
-                  width={size}
-                  height={size}
-                />
-                {image.size && (
-                  <span>{image.size.width + 'x' + image.size.height}</span>
-                )}
-              </li>
-            )
-          })}
+                Remove
+              </Button>
+              <Image
+                src={image.blob}
+                alt="Photo"
+                className={`${styles.image} ${styles.photo}`}
+                width={size}
+                height={size}
+              />
+              {image.size && image.file && (
+                <p>{`${image.size.width} x ${image.size.height} - ${image.file.name}`}</p>
+              )}
+            </li>
+          ))}
         </ul>
       ) : (
         <div
-          className="avatar no-image"
+          className={`${styles.photo} ${styles.noImage}`}
           style={{ height: size, width: size }}
         />
       )}
       <div style={{ width: size }}>
-        <label className="button primary block" htmlFor="single">
-          {uploading ? 'Uploading ...' : 'Upload'}
+        <label className="btn btn-success d-block" htmlFor="double">
+          {labelText}
         </label>
         <input
           style={{
@@ -79,12 +99,14 @@ export default function Uploader({
             position: 'absolute'
           }}
           type="file"
-          id="single"
+          id="double"
           accept="image/*"
           onChange={handleUploadImages}
-          disabled={images.length >= 2 || uploading}
+          disabled={isDisabled}
         />
       </div>
     </div>
   )
 }
+
+export default Uploader

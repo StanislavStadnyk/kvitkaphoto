@@ -23,8 +23,11 @@ import {
   KVITKAPHOTO_ACCESS_TOKEN,
   KVITKAPHOTO_REFRESH_TOKEN,
   LOGO,
-  ROUTES
+  ROUTES,
+  SITE_URL
 } from '@kvitkaphoto/constants'
+// config
+import supabase from '@kvitkaphoto/supabase.config'
 import Trans from '@kvitkaphoto/translation/en.json'
 
 const Login = () => {
@@ -66,8 +69,7 @@ const Login = () => {
       document.cookie = `${KVITKAPHOTO_ACCESS_TOKEN}=${session.access_token}; path=/; max-age=${maxAge}; SameSite=Lax; secure`
       document.cookie = `${KVITKAPHOTO_REFRESH_TOKEN}=${session.refresh_token}; path=/; max-age=${maxAge}; SameSite=Lax; secure`
 
-      setSession(res.session)
-      await fetch(API.AUTH)
+      setSession(session)
       setLoading(false)
     } catch (error: any) {
       toast(error.message, {
@@ -102,7 +104,7 @@ const Login = () => {
             <Card>
               <Card.Body aria-live="polite">
                 <h1 className="mb-4">Admin panel</h1>
-                <Loader isLoading={isLoading} text="Singing In...">
+                <Loader isLoading={isLoading} text="Log In...">
                   <Form onSubmit={handleOnSubmit}>
                     <InputGroup className="mb-4">
                       <FormControl
@@ -133,7 +135,7 @@ const Login = () => {
                         type="submit"
                         disabled={isBtnDisabled}
                       >
-                        Sign In
+                        Log In
                       </Button>
                     </div>
                   </Form>
@@ -149,24 +151,20 @@ const Login = () => {
 
 export default Login
 
-// export async function getServerSideProps() {
-//   // const refreshToken = req.cookies["my-refresh-token"];
-//   // const accessToken = req.cookies["my-access-token"];
-//   // console.log(">>> refreshToken", refreshToken);
-//   // console.log(">>> accessToken", accessToken);
-//   // const { user } = await supabase.auth.api.getUserByCookie(req);
-//   // console.log(">>> user", user);
-//   // const user = await supabase.auth.getUser();
-//   // console.log(">>>> user 2", user);
-//   // const res = await fetch(`http://localhost:3000/api/gallery`);
-//   // const data = await res.json();
-//   //
-//   // console.log("get data api 2", data);
-//   //
-//   // // Pass data to the page via props
-//   return {
-//     props: {
-//       test: "test",
-//     },
-//   };
-// }
+export async function getServerSideProps({ req }: any) {
+  const accessToken = req.cookies[KVITKAPHOTO_ACCESS_TOKEN]
+  const {
+    data: { user }
+  } = await supabase.auth.getUser(accessToken)
+
+  if (user) {
+    return {
+      props: {},
+      redirect: { destination: ROUTES.ADMIN, permanent: false }
+    }
+  }
+
+  return {
+    props: {}
+  }
+}

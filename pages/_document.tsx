@@ -5,11 +5,7 @@ const Document = () => (
     <Head>
       <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
       <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700&amp;subset=cyrillic-ext"
-        rel="stylesheet"
-      />
-      <link
-        href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic,cyrillic-ext"
+        href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400|Open+Sans+Condensed:300,700&display=swap"
         rel="stylesheet"
       />
     </Head>

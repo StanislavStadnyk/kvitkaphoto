@@ -81,9 +81,14 @@
     }
 
     > li {
-      margin-left: 15px;
-      margin-right: 15px;
+      margin-left: 10px;
+      margin-right: 10px;
       position: relative;
+
+      @include media('>desktop') {
+        margin-left: 15px;
+        margin-right: 15px;
+      }
 
       &.active {
         > a {

@@ -1,0 +1,13 @@
+.wrapper {
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.col {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+}
+
+.holder {
+  overflow: hidden;
+}

@@ -19,10 +19,7 @@ const GalleryItem: FC<TGalleryItem> = ({
   const alt = imgSmall.name.replace(/\.[^/.]+$/, '')
 
   return (
-    <a
-      href={`${STORAGE_URL}/${imgLarge.name}`}
-      className="col-xs-6 col-sm-3 col-md-3 col"
-    >
+    <a href={`${STORAGE_URL}/${imgLarge.name}`} className="col">
       <div className="gallery-item">
         <div className="gallery-item-holder">
           <Image

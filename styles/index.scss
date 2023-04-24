@@ -41,8 +41,15 @@ a {
   &:hover {
     outline: none !important;
     text-decoration: none;
-    color: $link-hover;
     box-shadow: none;
+  }
+}
+
+a {
+  &:focus,
+  &:active,
+  &:hover {
+    color: $link-hover;
   }
 }
 
@@ -109,4 +116,12 @@ a[href^='tel'] {
   .container {
     width: 982px;
   }
+}
+
+.list-unstyled {
+  @include list-unstyled();
+}
+
+.Toastify__toast-body > div:last-child {
+  color: $black;
 }

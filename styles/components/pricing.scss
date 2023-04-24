@@ -35,14 +35,16 @@
     h2 {
       color: $link-color;
       font-weight: 500;
+      font-size: 24px;
 
-      @include media('<desktop') {
-        font-size: 24px;
+      &.custom {
+        color: $pink;
       }
     }
 
     h3 {
       color: #b2b0b0;
+      font-size: 24px;
     }
 
     .holder {

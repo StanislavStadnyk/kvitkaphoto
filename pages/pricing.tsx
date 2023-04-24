@@ -26,39 +26,43 @@ const Pricing = () => (
 
     <Container className="pricing-page">
       <Row>
-        {DATA.pricingData.map((item: TPricingItem, i: number) => (
-          <Col sm={12} md={4} key={item.title + i}>
-            <div className="pricing-box">
-              <div className="holder">
-                <h2>{item.title}</h2>
-                <h3>{item.subtitle}</h3>
-                <strong className="price">{item.price}</strong>
+        {DATA.pricingData.map((item: TPricingItem, i: number) => {
+          const customCls = item.price.includes('Custom') ? 'custom' : ''
 
-                <OverlayTrigger
-                  trigger="click"
-                  placement={item.popoverPlacement}
-                  rootClose
-                  overlay={
-                    <Popover id={`popover-${i}`}>
-                      <Popover.Header as="h3">{item.subtitle}</Popover.Header>
-                      <Popover.Body>{item.description}</Popover.Body>
-                    </Popover>
-                  }
-                  defaultShow={false}
-                >
-                  <Button
-                    variant={
-                      item.price.includes('Custom') ? 'danger' : 'primary'
+          return (
+            <Col sm={12} md={4} key={item.title + i}>
+              <div className="pricing-box">
+                <div className="holder">
+                  <h2 className={customCls}>{item.title}</h2>
+                  <h3>{item.subtitle}</h3>
+                  <strong className="price">{item.price}</strong>
+
+                  <OverlayTrigger
+                    trigger="click"
+                    placement={item.popoverPlacement}
+                    rootClose
+                    overlay={
+                      <Popover id={`popover-${i}`} className={customCls}>
+                        <Popover.Header as="h3">{item.title}</Popover.Header>
+                        <Popover.Body>{item.description}</Popover.Body>
+                      </Popover>
                     }
-                    className="btn-info-price"
+                    defaultShow={false}
                   >
-                    {Trans.btn_more}
-                  </Button>
-                </OverlayTrigger>
+                    <Button
+                      variant={
+                        item.price.includes('Custom') ? 'danger' : 'primary'
+                      }
+                      className="btn-info-price"
+                    >
+                      {Trans.btn_more}
+                    </Button>
+                  </OverlayTrigger>
+                </div>
               </div>
-            </div>
-          </Col>
-        ))}
+            </Col>
+          )
+        })}
       </Row>
     </Container>
   </>
