@@ -83,7 +83,6 @@ const Admin: FC<TAdmin> = ({ data }) => {
     console.log('images', selectedGallery.images)
     console.log('newArra', newArra)
     console.log('selectedGallery', selectedGallery)
-    // setImages(imgs)
     setSelectedGallery({ ...selectedGallery, images: newArra })
   }
 
