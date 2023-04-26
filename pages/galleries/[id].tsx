@@ -17,6 +17,7 @@ const Gallery: FC<TGallery> = ({ title, images }) => {
 
   useEffect(() => {
     window.addEventListener('scroll', listenToScroll)
+
     return () => window.removeEventListener('scroll', listenToScroll)
   }, [])
 

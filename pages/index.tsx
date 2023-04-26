@@ -12,6 +12,7 @@ const Home = () => (
     <Head>
       <title>{`${Trans.helmet_title_home} | ${LOGO}`}</title>
     </Head>
+
     <Photostack />
     <Social />
   </>

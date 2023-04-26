@@ -27,7 +27,9 @@ const Pricing = () => (
     <Container className="pricing-page">
       <Row>
         {DATA.pricingData.map((item: TPricingItem, i: number) => {
-          const customCls = item.price.includes('Custom') ? 'custom' : ''
+          const isCustom = item.price.includes('Custom')
+          const customCls = isCustom ? 'custom' : ''
+          const btnVariant = isCustom ? 'danger' : 'primary'
 
           return (
             <Col sm={12} md={4} key={item.title + i}>
@@ -49,12 +51,7 @@ const Pricing = () => (
                     }
                     defaultShow={false}
                   >
-                    <Button
-                      variant={
-                        item.price.includes('Custom') ? 'danger' : 'primary'
-                      }
-                      className="btn-info-price"
-                    >
+                    <Button variant={btnVariant} className="btn-info-price">
                       {Trans.btn_more}
                     </Button>
                   </OverlayTrigger>
