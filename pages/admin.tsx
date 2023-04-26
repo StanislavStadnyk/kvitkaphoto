@@ -85,11 +85,6 @@ const Admin: FC<TAdmin> = ({ data }) => {
     console.log('selectedGallery', selectedGallery)
     // setImages(imgs)
     setSelectedGallery({ ...selectedGallery, images: newArra })
-    //
-    // const { error } = await supabase
-    //   .from('galler')
-    //   .update({ name: 'Australia' })
-    //   .eq('id', 1)
   }
 
   const updateDataOnSuccess = (data: any, selected: any) => {
