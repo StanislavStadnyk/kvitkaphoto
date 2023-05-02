@@ -5,7 +5,7 @@ export const LOGO = 'Kvitkaphoto.com.au'
 
 export const STORAGE_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/images`
 export const DEV_URL = 'http://localhost:3000'
-export const PROD_URL = 'https://new.premiumokna.kh.ua'
+export const PROD_URL = 'https://www.kvitkaphoto.com.au'
 // export const PROD_URL = 'https://master.d1e26u4olsdmdy.amplifyapp.com'
 // export const PROD_URL = 'http://localhost:3000'
 export const SITE_URL =
