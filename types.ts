@@ -10,9 +10,22 @@ export type TGalleryImage = {
   imgLarge: TImage
 }
 
+export type TUploadImageSet = {
+  id: string
+  title: string
+  images: any
+}
+
+export type TUploadImage = {
+  blob: string
+  file: Object
+  size: TImageSize
+}
+
 export type TImage = {
   name: string
   size: TImageSize
+  volume?: number
 }
 
 export type TImageSize = {

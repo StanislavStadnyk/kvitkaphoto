@@ -1,10 +1,12 @@
 import { toast } from 'react-toastify'
 
+import Router from 'next/router'
+
 import { nanoid } from 'nanoid'
 
 import { API } from '@kvitkaphoto/constants'
 import supabase from '@kvitkaphoto/supabase.config'
-import { TGallery } from '@kvitkaphoto/types'
+import { TGallery, TImage, TUploadImageSet } from '@kvitkaphoto/types'
 
 type TImages = {
   blob: string
@@ -56,75 +58,81 @@ export const uploadImages = async ({
   }
 }
 
-export const addGallery = async (images: any, id: any, title: any) => {
-  if (images?.length) {
-    return Promise.all(
-      images.map(async ({ file, size }: any) => {
-        const fileName = file.name
-        const filePath = `${fileName}`
+const uploadImagePromises = (id: string, images: any) =>
+  images.map(async ({ file, size }: any) => {
+    const fileName = file.name
+    const filePath = `${id}-${fileName}`
 
-        const data = await supabase.storage
-          .from('images')
-          .upload(filePath, file, { upsert: true })
+    const data = await supabase.storage
+      .from('images')
+      .upload(filePath, file, { upsert: true })
 
-        toast('Image uploaded', {
-          type: 'success'
-        })
-
-        console.log('data', data)
-
-        return {
-          size,
-          volume: file.size,
-          name: data.data?.path
-        }
-      })
-    ).then(async data => {
-      console.log('Items processed', data)
-
-      const dataSorted = data?.sort((a, b) => a.volume - b.volume)
-
-      console.log('data sorted', dataSorted)
-
-      try {
-        const response = await fetch(API.GALLERIES, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            id,
-            title,
-            images: [
-              {
-                id: nanoid(),
-                imgSmall: {
-                  name: dataSorted[0].name,
-                  size: dataSorted[0].size
-                },
-                imgLarge: {
-                  name: dataSorted[1].name,
-                  size: dataSorted[1].size
-                }
-              }
-            ]
-          })
-        })
-
-        const res = await response.json()
-        if (res.error) throw res.error
-
-        console.log('client response', res)
-
-        toast(res.message, {
-          type: 'success'
-        })
-      } catch (error: any) {
-        toast(error.message, {
-          type: 'error'
-        })
-      }
+    toast('Image uploaded', {
+      type: 'success'
     })
+
+    return {
+      size,
+      volume: file.size,
+      name: data.data?.path
+    }
+  })
+
+const sortImages = (data: TImage[]): TImage[] =>
+  // @ts-ignore
+  data.sort((a, b) => a.volume - b.volume)
+
+const postGalleryRequest = async (body: TGallery) => {
+  const response = await fetch(API.GALLERIES, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  })
+
+  const res = await response.json()
+  if (res.error) throw res.error
+
+  toast(res.message, {
+    type: 'success'
+  })
+}
+
+export const addGallery = async ({ id, images, title }: TUploadImageSet) => {
+  if (images?.length) {
+    return Promise.all(uploadImagePromises(id, images)).then(
+      async (data: TImage[]) => {
+        const dataSorted = sortImages(data)
+        const body = {
+          id,
+          title,
+          images: [
+            {
+              id: nanoid(),
+              imgSmall: {
+                name: dataSorted[0].name,
+                size: dataSorted[0].size
+              },
+              imgLarge: {
+                name: dataSorted[1].name,
+                size: dataSorted[1].size
+              }
+            }
+          ]
+        }
+
+        try {
+          await postGalleryRequest(body)
+
+          Router.reload() // refresh the page after creating
+        } catch (error: any) {
+          toast(error.message, {
+            type: 'error'
+          })
+        }
+      }
+    )
   } else {
     try {
       const response = await fetch(API.GALLERIES, {
@@ -166,80 +174,61 @@ export const updateGallery = async ({
   console.log('selectedGallery', selectedGallery)
 
   if (images?.length) {
-    return Promise.all(
-      images.map(async ({ file, size }: any) => {
-        const fileName = file.name
-        const filePath = `${fileName}`
+    return Promise.all(uploadImagePromises(selectedGallery.id, images)).then(
+      async data => {
+        console.log('Items processed', data)
 
-        const data = await supabase.storage
-          .from('images')
-          .upload(filePath, file, { upsert: true })
+        const dataSorted = data.sort((a, b) => a.volume - b.volume)
 
-        toast('Image uploaded', {
-          type: 'success'
-        })
-
-        console.log('data', data)
-
-        return {
-          size,
-          volume: file.size,
-          name: data.data?.path
-        }
-      })
-    ).then(async data => {
-      console.log('Items processed', data)
-
-      const dataSorted = data.sort((a, b) => a.volume - b.volume)
-
-      const updatedImages = [
-        ...selectedGallery.images,
-        {
-          id: nanoid(),
-          imgSmall: {
-            name: dataSorted[0].name,
-            size: dataSorted[0].size
-          },
-          imgLarge: {
-            name: dataSorted[1].name,
-            size: dataSorted[1].size
+        const updatedImages = [
+          ...selectedGallery.images,
+          {
+            id: nanoid(),
+            imgSmall: {
+              name: dataSorted[0].name,
+              size: dataSorted[0].size
+            },
+            imgLarge: {
+              name: dataSorted[1].name,
+              size: dataSorted[1].size
+            }
           }
-        }
-      ]
+        ]
 
-      try {
-        const response = await supabase
-          .from('galleries')
-          .update({
+        try {
+          const response = await supabase
+            .from('galleries')
+            .update({
+              id,
+              title,
+              images: updatedImages
+            })
+            .eq('id', selectedGallery.id)
+
+          console.log('response result', response)
+
+          const updatedDataMain = dataMain.map((item: TGallery) => {
+            if (item.id === selectedGallery.id) {
+              return {
+                ...item,
+                id,
+                title,
+                images: updatedImages
+              }
+            }
+
+            return item
+          })
+
+          updateDataOnSuccess(updatedDataMain, {
+            ...selectedGallery,
             id,
             title,
             images: updatedImages
           })
-          .eq('id', selectedGallery.id)
-
-        console.log('response result', response)
-
-        const updatedDataMain = dataMain.map((item: TGallery) => {
-          if (item.id === selectedGallery.id) {
-            return {
-              ...item,
-              id,
-              title,
-              images: updatedImages
-            }
-          }
-
-          return item
-        })
-
-        updateDataOnSuccess(updatedDataMain, {
-          ...selectedGallery,
-          id,
-          title,
-          images: updatedImages
-        })
-      } catch (e) {}
-    })
+        } catch (e) {}
+      }
+    )
   } else {
     try {
       const response = await supabase

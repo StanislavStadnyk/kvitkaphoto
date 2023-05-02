@@ -34,7 +34,7 @@ const initialGallery = {
 
 const Admin: FC<TAdmin> = ({ data }) => {
   const [validated, setValidated] = useState(false)
-  const [images, setImages] = useState<Array<string>>([])
+  const [uploadImages, setImages] = useState<Array<string>>([])
   const [galleryId, setGalleryId] = useState<string>('')
   const [title, setTitle] = useState<string>('')
   const [selectedGallery, setSelectedGallery] =
@@ -102,13 +102,13 @@ const Admin: FC<TAdmin> = ({ data }) => {
       selectedGallery.id
         ? updateGallery({
             selectedGallery,
-            images,
+            images: uploadImages,
             id: galleryId,
             title,
             dataMain,
             updateDataOnSuccess
           })
-        : addGallery(images, galleryId, title)
+        : addGallery({ id: galleryId, images: uploadImages, title })
     } else {
       setValidated(true)
     }
@@ -126,7 +126,7 @@ const Admin: FC<TAdmin> = ({ data }) => {
             <Col md={4}>
               <Uploader
                 size={150}
-                images={images}
+                images={uploadImages}
                 onUpload={handleUpload}
                 onRemove={handleRemove}
               />
