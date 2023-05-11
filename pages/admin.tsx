@@ -18,6 +18,7 @@ import {
 } from '@kvitkaphoto/constants'
 // config
 import supabase from '@kvitkaphoto/supabase.config'
+// trans
 import Trans from '@kvitkaphoto/translation/en.json'
 // types
 import { TGallery } from '@kvitkaphoto/types'
@@ -77,18 +78,11 @@ const Admin: FC<TAdmin> = ({ data }) => {
   }
 
   const handleListRemove = (id: string) => {
-    const newArra = selectedGallery.images.filter(img => img.id !== id)
-
-    console.log('id', id)
-    console.log('images', selectedGallery.images)
-    console.log('newArra', newArra)
-    console.log('selectedGallery', selectedGallery)
-    setSelectedGallery({ ...selectedGallery, images: newArra })
+    const filteredImages = selectedGallery.images.filter(img => img.id !== id)
+    setSelectedGallery({ ...selectedGallery, images: filteredImages })
   }
 
   const updateDataOnSuccess = (data: any, selected: any) => {
-    console.log('updateDataOnSuccess', data)
-    console.log('updateDataOnSuccess selected', selected)
     setDataMain(data)
     setSelectedGallery(selected)
     setImages([])

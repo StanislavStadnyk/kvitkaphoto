@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Image from 'next/image'
 
 // types
-import { TImageSize } from '@kvitkaphoto/types'
+import { TUploadImage } from '@kvitkaphoto/types'
 
 // helper
 import { uploadImages } from '../helper'
@@ -14,21 +14,8 @@ import styles from './Uploader.module.css'
 type TUploader = {
   size: number
   images: string[]
-  onUpload: (imgs: any) => void
-  onRemove: (imgs: any) => void
-}
-
-type TImageBlob = {
-  blob: string
-  file: {
-    lastModified: number
-    lastModifiedDate: string
-    name: string
-    size: number
-    type: string
-    webkitRelativePath: string
-  }
-  size: TImageSize
+  onUpload: (imgs: TUploadImage[]) => void
+  onRemove: (imgs: TUploadImage[]) => void
 }
 
 const Uploader: FC<TUploader> = ({ size, images, onUpload, onRemove }: any) => {
@@ -37,8 +24,8 @@ const Uploader: FC<TUploader> = ({ size, images, onUpload, onRemove }: any) => {
   const isDisabled = images.length >= 2 || uploading
   const labelText = uploading ? 'Uploading ...' : 'Upload'
 
-  const handleUploadImages = (event: any) => {
-    uploadImages({
+  const handleUploadImages = async (event: any) => {
+    await uploadImages({
       event,
       images,
       setUploading,
@@ -46,9 +33,9 @@ const Uploader: FC<TUploader> = ({ size, images, onUpload, onRemove }: any) => {
     })
   }
 
-  const removeImage = (imageName: any) => {
+  const removeImage = (blob: string) => {
     const updatedImages = images.filter(
-      (image: any) => image.blob !== imageName
+      (image: TUploadImage) => image.blob !== blob
     )
     onRemove(updatedImages)
   }
@@ -57,7 +44,7 @@ const Uploader: FC<TUploader> = ({ size, images, onUpload, onRemove }: any) => {
     <div className="mb-3">
       {images.length > 0 ? (
         <ul className="list-unstyled d-flex">
-          {images.map((image: TImageBlob, index: number) => (
+          {images.map((image: TUploadImage, index: number) => (
             <li
               key={image.blob + index}
               className="pb-3 m-2 d-flex flex-column"

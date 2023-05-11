@@ -18,7 +18,14 @@ export type TUploadImageSet = {
 
 export type TUploadImage = {
   blob: string
-  file: Object
+  file: {
+    lastModified: number
+    lastModifiedDate: string
+    name: string
+    size: number
+    type: string
+    webkitRelativePath: string
+  }
   size: TImageSize
 }
 
