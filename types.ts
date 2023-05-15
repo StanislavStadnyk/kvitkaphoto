@@ -46,14 +46,15 @@ export type TDropDownItem = {
 }
 
 export type THeader = {
-  galleryDropDown: TDropDownItem[] | null
+  galleryDropDown: TDropDownItem[]
 }
 
 export type TContactsItem = {
   text: string
   href: string
   linkText: string
-  target: string
+  target?: string
+  rel?: string
 }
 
 export enum EPlacement {

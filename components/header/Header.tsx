@@ -1,13 +1,17 @@
-import { FC } from 'react';
-import { Container, Navbar } from 'react-bootstrap';
+import { FC } from 'react'
+import { Container, Navbar } from 'react-bootstrap'
 
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
 
-import NavMain from '@kvitkaphoto/components/header/nav-main/NavMain';
-import { LOGO, ROUTES } from '@kvitkaphoto/constants';
-import logo from '@kvitkaphoto/public/images/logo.png';
-import { THeader } from '@kvitkaphoto/types';
+// components
+import NavMain from '@kvitkaphoto/components/header/nav-main/NavMain'
+// constants
+import { LOGO, ROUTES } from '@kvitkaphoto/constants'
+// images
+import logo from '@kvitkaphoto/public/images/logo.png'
+// types
+import { THeader } from '@kvitkaphoto/types'
 
 const Header: FC<THeader> = ({ galleryDropDown }) => (
   <Navbar id="header" expand="md">
@@ -25,6 +29,6 @@ const Header: FC<THeader> = ({ galleryDropDown }) => (
       </Navbar.Collapse>
     </Container>
   </Navbar>
-);
+)
 
-export default Header;
+export default Header

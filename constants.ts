@@ -142,19 +142,22 @@ export const DATA = {
       href: 'mailto:&#107;&#118;&#105;&#116;&#107;&#097;&#112;&#104;&#111;&#116;&#111;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;',
       linkText:
         '&#107;&#118;&#105;&#116;&#107;&#097;&#112;&#104;&#111;&#116;&#111;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;',
-      target: ''
+      target: '',
+      rel: ''
     },
     {
       text: 'tel',
       href: 'tel:0403965905',
       linkText: '0403965905',
-      target: ''
+      target: '',
+      rel: ''
     },
     {
       text: 'location',
       href: 'https://www.google.com/maps/place/Melbourne+VIC/@-37.9712368,144.4926449,9z/data=!3m1!4b1!4m6!3m5!1s0x6ad646b5d2ba4df7:0x4045675218ccd90!8m2!3d-37.8136276!4d144.9630576!16zL20vMGNoZ3pt',
       linkText: 'Melbourne',
-      target: '_blank'
+      target: '_blank',
+      rel: 'noreferrer'
     }
   ],
   socialData: [

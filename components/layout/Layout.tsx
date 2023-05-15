@@ -11,17 +11,18 @@ import { TDropDownItem, TGallery } from '@kvitkaphoto/types'
 
 type Props = {
   children: ReactElement
-  data: any
+  data: TGallery[]
 }
 
 const Layout: FC<Props> = ({ children, data }) => {
-  // get data for gallery dropdown
-  const galleryDropDown = data?.map((item: TGallery): TDropDownItem => {
-    return {
-      link: `${ROUTES.GALLERIES}/${item.id}`,
-      text: item.title
+  const galleryDropDown = data?.map(
+    ({ id, title }: TGallery): TDropDownItem => {
+      return {
+        link: `${ROUTES.GALLERIES}/${id}`,
+        text: title
+      }
     }
-  })
+  )
 
   const router = useRouter()
   const clsMain =

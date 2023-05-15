@@ -48,6 +48,7 @@ export function CustomApp({
         <Script strategy="beforeInteractive" src="/js/modernizr.min.js" />
         <Script strategy="beforeInteractive" src="/js/classie.js" />
         <Script strategy="beforeInteractive" src="/js/photostack.js" />
+        {/* GA */}
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-RMS1F5M93T"
