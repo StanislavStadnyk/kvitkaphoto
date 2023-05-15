@@ -6,6 +6,7 @@
 
 .js .photostack {
   height: calc(100vh - 70px);
+  overflow: hidden;
 }
 
 .photostack-start {
