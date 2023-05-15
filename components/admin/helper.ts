@@ -4,14 +4,23 @@ import Router from 'next/router'
 
 import { nanoid } from 'nanoid'
 
+// constants
 import { API } from '@kvitkaphoto/constants'
+// config
 import supabase from '@kvitkaphoto/supabase.config'
-import { TGallery, TImage, TUploadImageSet } from '@kvitkaphoto/types'
+// types
+import {
+  TGallery,
+  TImage,
+  TUploadImage,
+  TUploadImageSet
+} from '@kvitkaphoto/types'
 
-type TImages = {
-  blob: string
-  file: string
-  size: Object
+type TUploadImages = {
+  event: any
+  images: TUploadImage[]
+  setUploading: (e: boolean) => void
+  onUpload: (array: TUploadImage[]) => void
 }
 
 export const uploadImages = async ({
@@ -19,12 +28,7 @@ export const uploadImages = async ({
   images,
   setUploading,
   onUpload
-}: {
-  event: any
-  images: TImages[]
-  setUploading: (e: boolean) => void
-  onUpload: (array: TImages[]) => void
-}) => {
+}: TUploadImages) => {
   try {
     setUploading(true)
 
@@ -135,24 +139,13 @@ export const addGallery = async ({ id, images, title }: TUploadImageSet) => {
     )
   } else {
     try {
-      const response = await fetch(API.GALLERIES, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          id,
-          title,
-          images: []
-        })
-      })
+      const body = {
+        id,
+        title,
+        images: []
+      }
 
-      const res = await response.json()
-      if (res.error) throw res.error
-
-      toast(res.message, {
-        type: 'success'
-      })
+      await postGalleryRequest(body)
     } catch (error: any) {
       toast(error.message, {
         type: 'error'
