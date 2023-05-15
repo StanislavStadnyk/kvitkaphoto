@@ -169,8 +169,6 @@ export const updateGallery = async ({
   if (images?.length) {
     return Promise.all(uploadImagePromises(selectedGallery.id, images)).then(
       async data => {
-        console.log('Items processed', data)
-
         const dataSorted = data.sort((a, b) => a.volume - b.volume)
 
         const updatedImages = [
