@@ -18,10 +18,13 @@ const Header: FC<THeader> = ({ galleryDropDown }) => (
     <Container>
       <div className="navbar-header">
         <Link className="navbar-brand" href={ROUTES.HOME}>
-          <Image src={logo} alt={LOGO} width="45" height="43" />
+          <Image src={logo} alt={LOGO} width="45" height="45" />
           {LOGO}
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="Toggle navigation"
+          aria-expanded="false"
+        />
       </div>
 
       <Navbar.Collapse>
