@@ -3,6 +3,8 @@ import { EPlacement } from '@kvitkaphoto/types'
 
 export const LOGO = 'Kvitkaphoto.com.au'
 
+const EMAIL = 'kvitkaphoto@gmail.com'
+
 export const STORAGE_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/images`
 export const DEV_URL = 'http://localhost:3000'
 export const PROD_URL = 'https://www.kvitkaphoto.com.au'
@@ -139,9 +141,8 @@ export const DATA = {
   contactsData: [
     {
       text: 'email',
-      href: 'mailto:&#107;&#118;&#105;&#116;&#107;&#097;&#112;&#104;&#111;&#116;&#111;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;',
-      linkText:
-        '&#107;&#118;&#105;&#116;&#107;&#097;&#112;&#104;&#111;&#116;&#111;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;',
+      href: `mailto:${EMAIL},`,
+      linkText: EMAIL,
       target: '',
       rel: ''
     },
@@ -169,7 +170,7 @@ export const DATA = {
       alt: 'Instagram'
     },
     {
-      href: 'mailto:&#107;&#118;&#105;&#116;&#107;&#097;&#112;&#104;&#111;&#116;&#111;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;',
+      href: `mailto:${EMAIL},`,
       target: '',
       rel: '',
       img: 'email.svg',

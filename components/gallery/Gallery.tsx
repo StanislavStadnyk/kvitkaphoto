@@ -28,6 +28,9 @@ const GalleryComponent: FC<TGalleryComponent> = ({ images }) => (
         download={false}
         licenseKey={LG_KEY}
         elementClassNames="row"
+        mobileSettings={{
+          showCloseIcon: true
+        }}
       >
         {images.map((item: any, index: number) => {
           const isPriority = index < 8
