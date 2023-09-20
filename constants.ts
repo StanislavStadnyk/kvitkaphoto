@@ -141,7 +141,7 @@ export const DATA = {
   contactsData: [
     {
       text: 'email',
-      href: `mailto:${EMAIL},`,
+      href: `mailto:${EMAIL}`,
       linkText: EMAIL,
       target: '',
       rel: ''
@@ -170,7 +170,7 @@ export const DATA = {
       alt: 'Instagram'
     },
     {
-      href: `mailto:${EMAIL},`,
+      href: `mailto:${EMAIL}`,
       target: '',
       rel: '',
       img: 'email.svg',
