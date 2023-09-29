@@ -21,7 +21,7 @@ export const META_DESCRIPTION =
 export const META_KEYWORDS =
   'Melbourne photo, photographer Melbourne, photo Melbourne, wedding photographer Melbourne, Melbourne photographers, Melbourne photo shoot, Melbourne photo studio, Melbourne wedding photographer, Melbourne photo shoot, Melbourne street photo shoot, Melbourne club photo shoot, Melbourne wedding photo shoot, Melbourne studio photo shoot, studio photography, Kvitka Photo Melbourne, photo ticket, photo gallery, KvitkaPhoto, gift certificate for a photo shoot, gift certificate photo session, gift certificate photo session Melbourne, gift certificate for photography Melbourne, family photography, family photo session Melbourne'
 
-export const LG_KEY = process.env.LIGHT_GALLERY_LICENSE_KEY
+export const LG_KEY = '97CD1814-A3CD45CC-BC206BF9-323740E0'
 
 export const API = {
   LOGIN: '/api/login',
