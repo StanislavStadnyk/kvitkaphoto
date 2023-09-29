@@ -8,10 +8,10 @@ import lgAutoplay from 'lightgallery/plugins/autoplay'
 import lgFullscreen from 'lightgallery/plugins/fullscreen'
 import lgZoom from 'lightgallery/plugins/zoom'
 import LightGallery from 'lightgallery/react'
+import * as process from 'process'
 
 // components
 import GalleryItem from '@kvitkaphoto/components/gallery/gallery-item/GalleryItem'
-import { LG_KEY } from '@kvitkaphoto/constants'
 // types
 import { TGalleryImage } from '@kvitkaphoto/types'
 
@@ -26,10 +26,11 @@ const GalleryComponent: FC<TGalleryComponent> = ({ images }) => (
         speed={500}
         plugins={[lgZoom, lgFullscreen, lgAutoplay]}
         download={false}
-        licenseKey={LG_KEY}
+        licenseKey={process.env.LIGHT_GALLERY_LICENSE_KEY}
         elementClassNames="row"
         mobileSettings={{
-          showCloseIcon: true
+          showCloseIcon: true,
+          subHtmlSelectorRelative: false
         }}
       >
         {images.map((item: any, index: number) => {

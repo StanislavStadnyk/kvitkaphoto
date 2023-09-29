@@ -26,8 +26,6 @@ export const API = {
   GALLERIES: '/api/galleries'
 }
 
-export const LG_KEY = '97CD1814-A3CD45CC-BC206BF9-323740E0'
-
 export const ROUTES = {
   HOME: '/',
   PRICING: '/pricing',
@@ -41,84 +39,64 @@ export const ROUTES = {
 
 export const photoStackConfig = [
   {
-    link: `${ROUTES.GALLERIES}/wedding`,
-    src: '/images/polaroid/5.jpg',
-    alt: 'wedding img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/studio`,
-    src: '/images/polaroid/2.jpg',
-    alt: 'studio img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/street`,
-    src: '/images/polaroid/3.jpg',
-    alt: 'street img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/street`,
-    src: '/images/polaroid/10.jpg',
-    alt: 'street img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/street`,
-    src: '/images/polaroid/4.jpg',
-    alt: 'street img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/studio`,
-    src: '/images/polaroid/6.jpg',
-    alt: 'studio img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/studio`,
-    src: '/images/polaroid/7.jpg',
-    alt: 'studio img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/wedding`,
-    src: '/images/polaroid/8.jpg',
-    alt: 'wedding img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/wedding`,
-    src: '/images/polaroid/9.jpg',
-    alt: 'wedding img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/studio`,
+    link: `${ROUTES.GALLERIES}/all`,
     src: '/images/polaroid/1.jpg',
-    alt: 'studio img'
+    alt: 'gallery'
   },
   {
-    link: `${ROUTES.GALLERIES}/wedding`,
+    link: `${ROUTES.GALLERIES}/all`,
+    src: '/images/polaroid/2.jpg',
+    alt: 'gallery'
+  },
+  {
+    link: `${ROUTES.GALLERIES}/all`,
+    src: '/images/polaroid/3.jpg',
+    alt: 'gallery'
+  },
+  {
+    link: `${ROUTES.GALLERIES}/all`,
+    src: '/images/polaroid/10.jpg',
+    alt: 'gallery'
+  },
+  {
+    link: `${ROUTES.GALLERIES}/all`,
+    src: '/images/polaroid/4.jpg',
+    alt: 'gallery'
+  },
+  {
+    link: `${ROUTES.GALLERIES}/all`,
+    src: '/images/polaroid/6.jpg',
+    alt: 'gallery'
+  },
+  {
+    link: `${ROUTES.GALLERIES}/all`,
+    src: '/images/polaroid/7.jpg',
+    alt: 'gallery'
+  },
+  {
+    link: `${ROUTES.GALLERIES}/all`,
+    src: '/images/polaroid/8.jpg',
+    alt: 'gallery'
+  },
+  {
+    link: `${ROUTES.GALLERIES}/all`,
+    src: '/images/polaroid/9.jpg',
+    alt: 'gallery'
+  },
+  {
+    link: `${ROUTES.GALLERIES}/all`,
+    src: '/images/polaroid/5.jpg',
+    alt: 'gallery'
+  },
+  {
+    link: `${ROUTES.GALLERIES}/all`,
     src: '/images/polaroid/11.jpg',
-    alt: 'wedding img'
+    alt: 'gallery'
   },
   {
-    link: `${ROUTES.GALLERIES}/wedding`,
+    link: `${ROUTES.GALLERIES}/all`,
     src: '/images/polaroid/12.jpg',
-    alt: 'wedding img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/wedding`,
-    src: '/images/polaroid/13.jpg',
-    alt: 'wedding img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/wedding`,
-    src: '/images/polaroid/14.jpg',
-    alt: 'wedding img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/studio`,
-    src: '/images/polaroid/15.jpg',
-    alt: 'studio img'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/studio`,
-    src: '/images/polaroid/16.jpg',
-    alt: 'studio img'
+    alt: 'gallery'
   }
 ]
 
