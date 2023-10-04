@@ -42,62 +42,62 @@ export const ROUTES = {
 export const photoStackConfig = [
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/1.jpg',
+    src: '/images/polaroid/1.webp',
     alt: 'gallery'
   },
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/2.jpg',
+    src: '/images/polaroid/2.webp',
     alt: 'gallery'
   },
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/3.jpg',
+    src: '/images/polaroid/3.webp',
     alt: 'gallery'
   },
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/10.jpg',
+    src: '/images/polaroid/10.webp',
     alt: 'gallery'
   },
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/4.jpg',
+    src: '/images/polaroid/4.webp',
     alt: 'gallery'
   },
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/6.jpg',
+    src: '/images/polaroid/6.webp',
     alt: 'gallery'
   },
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/7.jpg',
+    src: '/images/polaroid/7.webp',
     alt: 'gallery'
   },
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/8.jpg',
+    src: '/images/polaroid/8.webp',
     alt: 'gallery'
   },
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/9.jpg',
+    src: '/images/polaroid/9.webp',
     alt: 'gallery'
   },
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/5.jpg',
+    src: '/images/polaroid/5.webp',
     alt: 'gallery'
   },
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/11.jpg',
+    src: '/images/polaroid/11.webp',
     alt: 'gallery'
   },
   {
     link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/12.jpg',
+    src: '/images/polaroid/12.webp',
     alt: 'gallery'
   }
 ]
