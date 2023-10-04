@@ -26,7 +26,7 @@ const About: FC = () => (
         <Col sm={6} md={6}>
           <Image
             fill
-            src="/images/about.jpg"
+            src="/images/about.webp"
             sizes="(max-width: 576px) 100vw, 50vw"
             priority
             alt={Trans.about_alt}
