@@ -1,6 +1,4 @@
 import SSRProvider from 'react-bootstrap/SSRProvider'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
 import App, { AppContext, AppInitialProps, AppProps } from 'next/app'
 import Head from 'next/head'
@@ -42,7 +40,6 @@ export function CustomApp({
         <Layout data={data}>
           <Component {...pageProps} />
         </Layout>
-        <ToastContainer autoClose={2000} />
 
         {/* Photostack */}
         <Script strategy="beforeInteractive" src="/js/modernizr.min.js" />
@@ -51,11 +48,13 @@ export function CustomApp({
         {/* GA */}
         <Script
           strategy="afterInteractive"
+          async
           src="https://www.googletagmanager.com/gtag/js?id=G-RMS1F5M93T"
         />
         <Script
           id="google-analytics"
           strategy="afterInteractive"
+          async
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];

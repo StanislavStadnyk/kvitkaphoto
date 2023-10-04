@@ -1,5 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Col, Container, Form, Row } from 'react-bootstrap'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import Head from 'next/head'
 
@@ -149,6 +151,8 @@ const Admin: FC<TAdmin> = ({ data }) => {
           </Row>
         </Form>
       </Container>
+
+      <ToastContainer autoClose={2000} />
     </>
   )
 }
