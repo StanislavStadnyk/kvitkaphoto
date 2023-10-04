@@ -16,6 +16,7 @@
 
     p {
       &:last-of-type {
+        font-family: $font-family-base-bold;
         font-weight: bold;
       }
     }
