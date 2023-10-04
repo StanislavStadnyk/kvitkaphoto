@@ -47,13 +47,13 @@ export function CustomApp({
         <Script strategy="beforeInteractive" src="/js/photostack.js" />
         {/* GA */}
         <Script
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-RMS1F5M93T"
         />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           async
           dangerouslySetInnerHTML={{
             __html: `
