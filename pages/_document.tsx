@@ -3,29 +3,11 @@ import { Head, Html, Main, NextScript } from 'next/document'
 const Document = () => (
   <Html lang="en">
     <Head>
-      <link
-        type="font/woff"
-        rel="preload"
-        href="/fonts/OpenSans-CondBold-webfont.woff"
-        as="font"
-        crossOrigin="true"
-      />
-      <link
-        type="font/woff"
-        rel="preload"
-        href="/fonts/OpenSans-CondLight-webfont.woff"
-        as="font"
-        crossOrigin="true"
-      />
-      <link
-        type="font/woff"
-        rel="preload"
-        href="/fonts/PTN57F-webfont.woff"
-        as="font"
-        crossOrigin="true"
-      />
       <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
-      <link type="text/css" rel="stylesheet" href="/fonts/styles.css" />
+      <link
+        href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400|Open+Sans+Condensed:300,700&display=swap"
+        rel="stylesheet"
+      />
     </Head>
 
     <body>
