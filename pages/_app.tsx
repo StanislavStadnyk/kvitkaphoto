@@ -43,8 +43,8 @@ export function CustomApp({
 
         {/* Photostack */}
         <Script strategy="beforeInteractive" src="/js/modernizr.min.js" />
-        <Script strategy="beforeInteractive" src="/js/classie.js" />
-        <Script strategy="beforeInteractive" src="/js/photostack.js" />
+        <Script strategy="beforeInteractive" src="/js/classie.min.js" />
+        <Script strategy="beforeInteractive" src="/js/photostack.min.js" />
         {/* GA */}
         <Script
           strategy="lazyOnload"
