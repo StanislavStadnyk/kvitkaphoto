@@ -12,7 +12,7 @@ const DynamicPhotostack = dynamic(
   () => import('@kvitkaphoto/components/photostack/Photostack'),
   {
     loading: () => <span className="spinner">Loading...</span>,
-    ssr: true
+    ssr: false
   }
 )
 
