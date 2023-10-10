@@ -9,12 +9,6 @@ export default async function handler(
   const requestMethod = req.method
   const body = req.body
 
-  // console.log(">>> req", req);
-  // console.log(">>> res", res);
-
-  // console.log(">>> body", body);
-  // console.log(">>> requestMethod", requestMethod);
-
   switch (requestMethod) {
     // handle POST request
     case 'POST':

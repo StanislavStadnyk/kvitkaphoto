@@ -8,10 +8,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const requestMethod = req.method
-  const body = req.body
-
-  console.log('>>> body ID', body)
-  console.log('>>> requestMethod ID', requestMethod)
 
   switch (requestMethod) {
     // handle GET request
