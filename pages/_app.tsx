@@ -25,6 +25,18 @@ export function CustomApp({
     <>
       <SSRProvider>
         <Head>
+          <meta property="og:url" content="https://www.kvitkaphoto.com.au/" />
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:title"
+            content="Kvitkaphoto Photography Melbourne"
+          />
+          <meta
+            property="og:description"
+            content="Kvitkaphoto Photography Melbourne"
+          />
+          <meta property="og:image" content="/images/meta.jpg" />
+
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
