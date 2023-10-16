@@ -35,7 +35,7 @@ export function CustomApp({
             property="og:description"
             content="Kvitkaphoto Photography Melbourne"
           />
-          <meta property="og:image" content="/images/img-meta.webp" />
+          <meta property="og:image" content="/images/img-meta.jpg" />
 
           <meta
             name="viewport"
