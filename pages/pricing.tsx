@@ -1,6 +1,10 @@
 import React from 'react'
-import { Col, Container, OverlayTrigger, Popover, Row } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Popover from 'react-bootstrap/Popover'
+import Row from 'react-bootstrap/Row'
 
 import Head from 'next/head'
 
@@ -33,7 +37,7 @@ const Pricing = () => (
 
           return (
             <Col sm={12} md={4} key={item.title + i}>
-              <div className="pricing-box">
+              <div className={`pricing-box pricing-box-${i}`}>
                 <div className="holder">
                   <h2 className={customCls}>{item.title}</h2>
                   <h3>{item.subtitle}</h3>

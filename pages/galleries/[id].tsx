@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 
 import Head from 'next/head'
 import Image from 'next/image'

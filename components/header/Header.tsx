@@ -1,5 +1,6 @@
 import { FC } from 'react'
-import { Container, Navbar } from 'react-bootstrap'
+import Container from 'react-bootstrap/Container'
+import Navbar from 'react-bootstrap/Navbar'
 
 import Image from 'next/image'
 import Link from 'next/link'

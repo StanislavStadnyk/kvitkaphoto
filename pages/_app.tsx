@@ -35,7 +35,7 @@ export function CustomApp({
             property="og:description"
             content="Kvitkaphoto Photography Melbourne"
           />
-          <meta property="og:image" content="/images/meta.jpg" />
+          <meta property="og:image" content="/images/img-meta.webp" />
 
           <meta
             name="viewport"
@@ -56,7 +56,7 @@ export function CustomApp({
         {/* Photostack */}
         <Script strategy="beforeInteractive" src="/js/modernizr.min.js" />
         <Script strategy="beforeInteractive" src="/js/classie.min.js" />
-        <Script strategy="beforeInteractive" src="/js/photostack.min.js" />
+        <Script strategy="beforeInteractive" src="/js/photostack.js" />
         {/* GA */}
         <Script
           strategy="lazyOnload"

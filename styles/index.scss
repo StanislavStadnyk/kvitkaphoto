@@ -14,6 +14,8 @@
 @import 'components/polaroid';
 @import 'components/buttons';
 
+$header-height: 70px;
+
 html,
 body {
   min-width: 320px;
@@ -62,11 +64,13 @@ a[href^='tel'] {
 }
 
 .main {
-  padding-top: 70px;
+  padding-top: calc(70px + $header-height);
   padding-bottom: 50px;
+  overflow: hidden;
+  position: relative;
 
   @include media('<tablet') {
-    padding-top: 30px;
+    padding-top: calc(30px + $header-height);
     padding-bottom: 15px;
   }
 }

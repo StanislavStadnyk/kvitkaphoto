@@ -1,5 +1,7 @@
 import { FC } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 import Head from 'next/head'
 import Image from 'next/image'
@@ -26,7 +28,7 @@ const About: FC = () => (
         <Col sm={6} md={6}>
           <Image
             fill
-            src="/images/about.webp"
+            src="/images/img-about.webp"
             sizes="(max-width: 576px) 100vw, 50vw"
             priority
             alt={Trans.about_alt}
