@@ -4,11 +4,17 @@
     margin-bottom: 40px;
   }
 
+  img,
+  .holder {
+    animation: 0.5s ease-in 0s 1 slideInFromLeft forwards;
+    transform: translateX(2000px);
+  }
+
   img {
-    filter: grayscale(35%);
     margin: 0 auto 10px;
     height: auto !important;
     position: static !important;
+    animation-delay: 0.2s;
   }
 
   .holder {
@@ -16,7 +22,6 @@
 
     p {
       &:last-of-type {
-        // font-family: $font-family-base-bold;
         font-weight: bold;
       }
     }

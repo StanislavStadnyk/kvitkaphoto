@@ -2,13 +2,13 @@
   padding-top: 20px;
   padding-bottom: 20px;
   letter-spacing: 1px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
-  background-color: rgba($black-2, 0.4);
-
-  @include media('<tablet') {
-    background-color: $black-2;
-  }
+  background-color: $black-2;
+  border-bottom: 1px solid deeppink;
 
   .navbar-header {
     display: flex;

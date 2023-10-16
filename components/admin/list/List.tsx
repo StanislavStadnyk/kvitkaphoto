@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
-import { Col, Row } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 
 import Image from 'next/image'
 

@@ -9,3 +9,12 @@
 %transition {
   transition: all 0.3s ease-in-out;
 }
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

@@ -27,7 +27,6 @@ export default async function handler(
 
         res.status(status).json(data)
       } catch (error: any) {
-        console.log('error get', error)
         res.status(error.status).json({
           error: {
             message: error.message,

@@ -8,8 +8,7 @@ const EMAIL = 'kvitkaphoto@gmail.com'
 export const STORAGE_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/images`
 export const DEV_URL = 'http://localhost:3000'
 export const PROD_URL = 'https://www.kvitkaphoto.com.au'
-// export const PROD_URL = 'https://master.d1e26u4olsdmdy.amplifyapp.com'
-// export const PROD_URL = 'http://localhost:3000'
+
 export const SITE_URL =
   process.env.NODE_ENV === 'development' ? DEV_URL : PROD_URL
 
@@ -68,16 +67,6 @@ export const photoStackConfig = [
   {
     link: `${ROUTES.GALLERIES}/all`,
     src: '/images/polaroid/6.webp',
-    alt: 'gallery'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/7.webp',
-    alt: 'gallery'
-  },
-  {
-    link: `${ROUTES.GALLERIES}/all`,
-    src: '/images/polaroid/8.webp',
     alt: 'gallery'
   },
   {
