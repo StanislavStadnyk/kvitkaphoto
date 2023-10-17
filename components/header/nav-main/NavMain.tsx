@@ -8,13 +8,23 @@ import Trans from '@kvitkaphoto/translation/en.json'
 // types
 import { THeader } from '@kvitkaphoto/types'
 
-type TMainNav = THeader
+type TMainNav = THeader & {
+  handleCloseMenu: () => void
+}
 
-const NavMain: FC<TMainNav> = ({ galleryDropDown }) => (
+const NavMain: FC<TMainNav> = ({ galleryDropDown, handleCloseMenu }) => (
   <ul className="nav navbar-nav">
-    <NavLink href={ROUTES.PRICING} text={Trans.nav_pricing} />
+    <NavLink
+      href={ROUTES.PRICING}
+      text={Trans.nav_pricing}
+      handleCloseMenu={handleCloseMenu}
+    />
     {galleryDropDown?.length === 1 ? (
-      <NavLink href={galleryDropDown[0].link} text={Trans.nav_gallery} />
+      <NavLink
+        href={galleryDropDown[0].link}
+        text={Trans.nav_gallery}
+        handleCloseMenu={handleCloseMenu}
+      />
     ) : (
       <li>
         <span>{Trans.nav_gallery}</span>
@@ -22,14 +32,27 @@ const NavMain: FC<TMainNav> = ({ galleryDropDown }) => (
         <div>
           <ul>
             {galleryDropDown.map(item => (
-              <NavLink href={item.link} text={item.text} key={item.link} />
+              <NavLink
+                href={item.link}
+                text={item.text}
+                key={item.link}
+                handleCloseMenu={handleCloseMenu}
+              />
             ))}
           </ul>
         </div>
       </li>
     )}
-    <NavLink href={ROUTES.ABOUT} text={Trans.nav_about} />
-    <NavLink href={ROUTES.CONTACTS} text={Trans.nav_contacts} />
+    <NavLink
+      href={ROUTES.ABOUT}
+      text={Trans.nav_about}
+      handleCloseMenu={handleCloseMenu}
+    />
+    <NavLink
+      href={ROUTES.CONTACTS}
+      text={Trans.nav_contacts}
+      handleCloseMenu={handleCloseMenu}
+    />
   </ul>
 )
 

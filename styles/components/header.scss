@@ -22,6 +22,7 @@
   .navbar-collapse {
     @include media('>tablet') {
       flex-grow: 0;
+      height: auto !important;
     }
   }
 
