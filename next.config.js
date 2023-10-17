@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     domains: [process.env.NEXT_PUBLIC_SUPABASE_URL.slice(8)]
   },
-  async rewrites() {
+  rewrites: async () => {
     return [
       {
         source: '/sitemap.xml',
