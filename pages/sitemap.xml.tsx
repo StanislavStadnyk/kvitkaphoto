@@ -1,11 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+import { NextApiRequest, NextApiResponse } from 'next'
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'text/xml')
+  res.setHeader('Cache-control', 'stale-while-revalidate, s-maxage=3600')
+  // generate sitemap here
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://www.kvitkaphoto.com.au/</loc>
@@ -34,4 +39,6 @@
 </url>
 
 
-</urlset>
+</urlset>`
+  res.end(xml)
+}
