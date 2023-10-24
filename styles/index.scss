@@ -73,6 +73,13 @@ a[href^='tel'] {
     padding-top: calc(30px + $header-height);
     padding-bottom: 15px;
   }
+
+  > .container {
+    @include media('>tablet') {
+      background: rgba(0, 0, 0, 0.1);
+      padding-top: 30px;
+    }
+  }
 }
 
 .dark-seo {
