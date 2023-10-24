@@ -27,7 +27,7 @@ const Layout: FC<Props> = ({ children, data }) => {
   const router = useRouter()
   const clsMain =
     router.pathname === ROUTES.HOME || router.pathname === ROUTES.ADMIN
-      ? ''
+      ? 'index-page'
       : 'main'
 
   return (

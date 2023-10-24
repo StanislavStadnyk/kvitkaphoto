@@ -15,22 +15,44 @@
     line-height: 36px;
     margin-bottom: 1rem;
 
+    li {
+      animation: 0.5s ease-in 0s 1 slideInFromBottom forwards;
+      transform: translateX(2000px);
+
+      &:nth-child(1) {
+        animation-delay: 0.4s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 0.6s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.8s;
+      }
+    }
+
     a {
       letter-spacing: 1px;
     }
   }
 
   .social-networks {
-    position: static;
-    background: none;
     padding: 0;
-    transform: translateY(0);
-    overflow: hidden;
-    border-radius: 0;
 
     li {
       float: left;
       padding: 0 20px 0 0;
+      animation: 0.5s ease-in 0s 1 slideInFromBottom forwards;
+      transform: translateX(2000px);
+
+      &:nth-child(1) {
+        animation-delay: 1s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 1.2s;
+      }
     }
   }
 }
