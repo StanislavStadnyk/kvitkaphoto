@@ -16,7 +16,7 @@ type TPhotoStackItem = {
 
 const Photostack = () => {
   useEffect(() => {
-    // initPhotostack()
+    initPhotostack()
   }, [])
 
   return (
