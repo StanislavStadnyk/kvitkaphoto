@@ -52,32 +52,6 @@ export function CustomApp({
         <Layout data={data}>
           <Component {...pageProps} />
         </Layout>
-
-        {/* Photostack */}
-        {/*<Script strategy="beforeInteractive" src="/js/modernizr.min.js" />*/}
-        {/*<Script strategy="beforeInteractive" src="/js/classie.min.js" />*/}
-        {/*<Script strategy="beforeInteractive" src="/js/photostack.js" />*/}
-        {/* GA */}
-        <Script
-          strategy="lazyOnload"
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-RMS1F5M93T"
-        />
-        <Script
-          id="google-analytics"
-          strategy="lazyOnload"
-          async
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-RMS1F5M93T', {
-                page_path: window.location.pathname,
-              });
-            `
-          }}
-        />
       </SSRProvider>
     </>
   )

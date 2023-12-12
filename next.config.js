@@ -3,7 +3,13 @@ const nextConfig = {
   compress: true,
   swcMinify: true,
   images: {
-    domains: [process.env.NEXT_PUBLIC_SUPABASE_URL.slice(8)]
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: process.env.NEXT_PUBLIC_SUPABASE_URL.slice(8),
+        pathname: '**'
+      }
+    ]
   },
   rewrites: async () => {
     return [
