@@ -1,9 +1,7 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import Script from 'next/script'
 
 // components
-import Photostack from '@kvitkaphoto/components/photostack/Photostack'
 import Social from '@kvitkaphoto/components/social/Social'
 // constants
 import { LOGO } from '@kvitkaphoto/constants'
