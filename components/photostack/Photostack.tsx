@@ -31,7 +31,6 @@ const Photostack = () => {
                   src={src}
                   alt={alt}
                   sizes="(max-width: 576px) 280px, 430px"
-                  priority
                 />
               </Link>
             </figure>
