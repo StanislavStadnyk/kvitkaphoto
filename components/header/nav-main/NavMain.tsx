@@ -15,6 +15,11 @@ type TMainNav = THeader & {
 const NavMain: FC<TMainNav> = ({ galleryDropDown, handleCloseMenu }) => (
   <ul className="nav navbar-nav">
     <NavLink
+      href={ROUTES.STUDIO}
+      text={Trans.nav_studio}
+      handleCloseMenu={handleCloseMenu}
+    />
+    <NavLink
       href={ROUTES.PRICING}
       text={Trans.nav_pricing}
       handleCloseMenu={handleCloseMenu}

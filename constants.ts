@@ -35,7 +35,8 @@ export const ROUTES = {
   CONTACTS: '/contacts',
   GALLERY_STREET: '/street',
   LOGIN: '/login',
-  ADMIN: '/admin'
+  ADMIN: '/admin',
+  STUDIO: 'https://www.k-studio.com.au/'
 }
 
 export const photoStackConfig = [
