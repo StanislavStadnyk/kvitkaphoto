@@ -176,13 +176,13 @@ export const DATA = {
       description: Trans.pricing_studio_description,
       popoverPlacement: EPlacement.TOP
     },
-    {
-      title: Trans.pricing_event_title,
-      subtitle: Trans.pricing_event_subtitle,
-      price: Trans.pricing_event_price,
-      description: Trans.pricing_event_description,
-      popoverPlacement: EPlacement.TOP
-    },
+    // {
+    //   title: Trans.pricing_event_title,
+    //   subtitle: Trans.pricing_event_subtitle,
+    //   price: Trans.pricing_event_price,
+    //   description: Trans.pricing_event_description,
+    //   popoverPlacement: EPlacement.TOP
+    // },
     {
       title: Trans.pricing_gift_title,
       subtitle: Trans.pricing_gift_subtitle,
