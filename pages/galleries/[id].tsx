@@ -8,7 +8,7 @@ import Image from 'next/image'
 // components
 import GalleryComponent from '@kvitkaphoto/components/gallery/Gallery'
 // constants
-import { API, LOGO, SITE_URL } from '@kvitkaphoto/constants'
+import { API, DATA, LOGO, SITE_URL } from '@kvitkaphoto/constants'
 // types
 import { TGallery } from '@kvitkaphoto/types'
 
@@ -47,7 +47,19 @@ const Gallery: FC<TGallery> = ({ title, images }) => {
       </Head>
 
       <Container as="section" className="gallery-page">
-        <h1>{title} photos</h1>
+        <div className="d-flex justify-content-center flex-column">
+          <h1>{title} photos</h1>
+          <a
+            href={DATA.socialData[0].href}
+            className="btn-instagram"
+            rel="noreferrer"
+          >
+            Check our Instagram
+            <br />
+            for more photos
+          </a>
+        </div>
+
         <GalleryComponent images={images} />
       </Container>
 
